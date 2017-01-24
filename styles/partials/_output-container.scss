@@ -1,0 +1,17 @@
+.output-container {
+  background: $tertiaryColor;
+  height: 500px;
+  padding: 1rem;
+  position: relative;
+
+  div {
+    display: block;
+    margin: 0 auto;
+    width: 85%;
+  }
+
+  span {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}

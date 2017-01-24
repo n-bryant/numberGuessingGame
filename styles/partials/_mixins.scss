@@ -1,0 +1,15 @@
+// @mixin breakpoint media queries
+
+@mixin center {
+  right: 50%;
+  top: 50%;
+  transform: translate(50%,-50%);
+}
+@mixin horCenter {
+  right: 50%;
+  transform: translateX(50%);
+}
+@mixin vertCenter {
+  top: 50%;
+  transform: translateY(-50%);
+}

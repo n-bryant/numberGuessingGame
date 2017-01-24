@@ -1,0 +1,27 @@
+body {
+  color: #fff;
+  font: 16px/1.6 $primaryFont;
+}
+
+header {
+  color: $primaryColor;
+  font: 3rem $secondaryFont;
+}
+
+.input-container {
+  border-radius: 5px;
+  input {
+    &[type="submit"] {
+      color: $primaryColor;
+      font: 1.5rem $secondaryFont;
+    }
+  }
+  button {
+    color: $primaryColor;
+    font: 1.5rem $secondaryFont;
+  }
+}
+
+.output-container {
+  color: $primaryColor;
+}

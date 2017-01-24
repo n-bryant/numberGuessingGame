@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Guess the Number</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <header>
+      <h1>Number Guessing Game</h1>
+    </header>
+    <main>
+      <section class="input-container">
+        <p class="instructions">Guess a random number between 1 and 100.  Guess correctly and win a prize!  Guess incorrectly 5 times and you lose!</p>
+        <form class="guess-form" autocomplete="off">
+          <label for="user-guess">Your Guess:</label>
+          <input type="number" name="guess" id="user-guess" placeholder="1" min="1" max="100">
+          <input type="submit" value="Guess!">
+        </form>
+        <button class="play-again">Reset Game!</button>
+      </section>
+      <section class="output-container">
+        <div class="gif-container" title="">
+          <img class="gif-response">
+        </div>
+        <div text-response-container>
+          <span class="guess-count"></span>
+          <span class="guess-response"></span>
+          <span class="silly-response"></span>
+          <span class="duplicate-guess"></span>
+          <span class="close-guess"></span>
+        </div>
+      </section>
+    </main>
+    <script type="text/javascript" src="scripts/app.js"></script>
+  </body>
+</html>

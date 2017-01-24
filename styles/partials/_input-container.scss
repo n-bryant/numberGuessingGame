@@ -1,0 +1,44 @@
+.input-container {
+  background: $secondaryColor;
+  height: 350px;
+  padding: 15px;
+  position: relative;
+  text-align: left;
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    border-radius: 5px;
+    display: block;
+    margin: 2rem auto 0 auto;
+    width: 60%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+form {
+  margin: 0 auto;
+  text-align: center;
+
+  label {
+    margin-right: 5px;
+  }
+
+  input {
+    &[type="submit"] {
+      border-radius: 5px;
+      display: block;
+      margin: 2rem auto 0 auto;
+      width: 60%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
