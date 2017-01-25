@@ -86,6 +86,7 @@ function doGuessGame() {
     gameOver = true;
     msg = "You have made too many incorrect guesses.  You lose!!!";
     guessResponse.innerHTML = msg;
+    sillyResponse.innerHTML = "";
 
     gifResponse.src = gifSrcs[4];
     gifResponse.alt = gifAlts[4];
