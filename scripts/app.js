@@ -50,7 +50,7 @@ function doGuessGame() {
     gifResponse.src = gifSrcs[1];
     gifResponse.alt = gifAlts[1];
 
-    if (currentGuess < lastGuess && lastGuess < goalNum && gameOver == false) {
+    if (currentGuess < lastGuess && lastGuess < goalNum) {
       sillyResponse.innerHTML = "Why would you guess lower?";
     } else {
       sillyResponse.innerHTML = "";
@@ -65,7 +65,7 @@ function doGuessGame() {
     gifResponse.src = gifSrcs[2];
     gifResponse.alt = gifAlts[2];
 
-    if (currentGuess > lastGuess && lastGuess > goalNum  && gameover == false) {
+    if (currentGuess > lastGuess && lastGuess > goalNum) {
       sillyResponse.innerHTML = "Why would you guess higher?";
     } else {
       sillyResponse.innerHTML = "";
@@ -80,7 +80,9 @@ function doGuessGame() {
 
     gifResponse.src = gifSrcs[3];
     gifResponse.alt = gifAlts[3];
-  }
+  } if (failedAttempts === 5 &&& sillyResponse.innerHTML != "" {
+        sillyResponse.innerHTML = "";
+    }
   // After 5 incorrect guesses, the program needs to tell you that you lose and the game is over.
   if (failedAttempts === 5) {
     gameOver = true;
