@@ -80,9 +80,10 @@ function doGuessGame() {
 
     gifResponse.src = gifSrcs[3];
     gifResponse.alt = gifAlts[3];
-  } if (failedAttempts === 5 && sillyResponse.innerHTML != "") {
+  } 
+  if (failedAttempts === 5 && sillyResponse.innerHTML !== "") {
         sillyResponse.innerHTML = "";
-    }
+  }
   // After 5 incorrect guesses, the program needs to tell you that you lose and the game is over.
   if (failedAttempts === 5) {
     gameOver = true;
