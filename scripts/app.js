@@ -50,14 +50,14 @@ function doGuessGame() {
     gifResponse.src = gifSrcs[1];
     gifResponse.alt = gifAlts[1];
 
-    if (currentGuess < lastGuess && lastGuess < goalNum) {
+    if (currentGuess < lastGuess && lastGuess < goalNum && gameOver == false) {
       sillyResponse.innerHTML = "Why would you guess lower?";
     } else {
       sillyResponse.innerHTML = "";
     }
   }
   // If your guess is higher than the computer's number, it needs to tell you that your guess was too high.
-  else if (currentGuess > goalNum && failedAttempts < 5) {
+  else if (currentGuess > goalNum && failedAttempts < 5 && gameover == false) {
     failedAttempts++;
     msg += " was too high.  Guess lower!";
     guessResponse.innerHTML = msg;
