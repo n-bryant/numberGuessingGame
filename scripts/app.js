@@ -21,8 +21,8 @@ let guessCount = 0;
 let currentGuess;
 let gameOver = false;
 
-let gifSrcs = ["https://media.giphy.com/media/bXQWsZ9qkP5MA/giphy.gif", "http://www.reactiongifs.com/wp-content/uploads/2012/12/14kwrhk.gif", "http://gif-finder.com/wp-content/uploads/2015/12/Joaquin-Phoenix-Thumbs-Down.gif", "http://gif-finder.com/wp-content/uploads/2015/03/Clint-Eastwood-Mad.gif", "http://i.imgur.com/cLumOK9.gif"];
-let gifAlts = ["Make My Day", "Kobe Looking Up", "Emperor Thumbs Down", "Angry Clint Eastwood", "Cowboy Laughing"];
+let gifSrcs = ["https://media.tenor.co/images/c029943232155a791fb554af50fa694f/raw", "https://thedisneydivadotcom.files.wordpress.com/2016/09/up-gif.gif?w=640", "http://i.imgur.com/KqYWYsv.gif", "https://media.giphy.com/media/GCLlQnV7wzKLu/giphy.gif", "http://i.imgur.com/cLumOK9.gif"];
+let gifAlts = ["Feeling Lucky Punk", "Balloons Raising House", "Dennis Doing A Split", "Leonardo Dicaprio Toasting", "Cowboy Laughing"];
 gifResponse.src = gifSrcs[0];
 gifResponse.alt = gifAlts[0];
 
