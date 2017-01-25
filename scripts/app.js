@@ -80,7 +80,8 @@ function doGuessGame() {
 
     gifResponse.src = gifSrcs[3];
     gifResponse.alt = gifAlts[3];
-  } 
+  }
+  // game loss
   if (failedAttempts === 5 && sillyResponse.innerHTML !== "") {
         sillyResponse.innerHTML = "";
   }
