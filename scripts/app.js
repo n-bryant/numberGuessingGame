@@ -42,7 +42,7 @@ function doGuessGame() {
   const lastGuess = guesses[guessCount - 1];
 
   // If your guess is lower than the computer's number, it needs to tell you that your guess was too low.
-  if (parseInt(currentGuess) < goalNum && failedAttempts < 5) {
+  if (currentGuess < goalNum && failedAttempts < 5) {
     failedAttempts++;
     msg += " was too low.  Guess higher!";
     guessResponse.innerHTML = msg;
@@ -50,14 +50,14 @@ function doGuessGame() {
     gifResponse.src = gifSrcs[1];
     gifResponse.alt = gifAlts[1];
 
-    if ((parseInt(currentGuess) < parseInt(lastGuess)) && (parseInt(lastGuess) < goalNum)) {
+    if (currentGuess < lastGuess && lastGuess < goalNum) {
       sillyResponse.innerHTML = "Why would you guess lower?";
     } else {
       sillyResponse.innerHTML = "";
     }
   }
   // If your guess is higher than the computer's number, it needs to tell you that your guess was too high.
-  else if (parseInt(currentGuess) > goalNum && failedAttempts < 5) {
+  else if (currentGuess > goalNum && failedAttempts < 5) {
     failedAttempts++;
     msg += " was too high.  Guess lower!";
     guessResponse.innerHTML = msg;
@@ -65,14 +65,14 @@ function doGuessGame() {
     gifResponse.src = gifSrcs[2];
     gifResponse.alt = gifAlts[2];
 
-    if ((parseInt(currentGuess) > parseInt(lastGuess)) && (parseInt(lastGuess) > goalNum)) {
+    if (currentGuess > lastGuess && lastGuess > goalNum) {
       sillyResponse.innerHTML = "Why would you guess higher?";
     } else {
       sillyResponse.innerHTML = "";
     }
   }
   // If your guess is correct, the program needs to tell you that you win and the game is over.
-  else if (parseInt(currentGuess) === goalNum) {
+  else if (currentGuess === goalNum) {
     gameOver = true;
     msg += " was correct!  You win!!!";
     guessResponse.innerHTML = msg;
@@ -84,22 +84,20 @@ function doGuessGame() {
   // After 5 incorrect guesses, the program needs to tell you that you lose and the game is over.
   if (failedAttempts === 5) {
     gameOver = true;
-    msg = "You have made too many incorrect guesses.  You lose!!!";
+    msg = "You have made too many incorrect guesses.  The number was " + goalNum + ".  You lose!!!";
     guessResponse.innerHTML = msg;
-    sillyResponse.innerHTML = "";
-    dupGuessResponse.innerHTML = "";
 
     gifResponse.src = gifSrcs[4];
     gifResponse.alt = gifAlts[4];
   }
   // If you guess the same number twice, the program needs to ask you if you're feeling all right (or something similarly sarcastic).
-  if (currentGuess == lastGuess) {
+  if (currentGuess == lastGuess && gameOver == false) {
     dupGuessResponse.innerHTML = "Your current guess is the same as your last guess. Are you feeling ok?";
   } else {
     dupGuessResponse.innerHTML = "";
   }
   // Tell the user if their guess is close
-  if ((parseInt(currentGuess) + 5 === goalNum) || (parseInt(currentGuess) - 5 === goalNum)) {
+  if ((goalNum - currentGuess == 1 || goalNum + 1 == currentGuess) && gameOver == false) {
     closeGuessResponse.innerHTML = "You were pretty close that time!";
   } else {
     closeGuessResponse.innerHTML = "";
@@ -146,10 +144,11 @@ guessForm.addEventListener('submit', () => {
   if (gameOver == false) {
     // Stores the user guess on form submit.
     collectGuess();
-    guessForm.reset();
   } else {
     gameReset();
   }
+
+  guessForm.reset();
 });
 
 resetHandler.addEventListener('click', () => {
